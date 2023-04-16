@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -14,9 +14,17 @@ export class RecipeListComponent {
       'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'
     ),
     new Recipe(
-      'A Test Recipe',
+      'A Test Recipe 2',
       'This is simply a test',
       'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'
     ),
   ];
+
+  // recipeName: string = 'dummy';
+  @Output() recipeNameEmitter = new EventEmitter<string>();
+  // also outputs what it receives
+
+  onAcceptRecipeName(newRecipeName: string) {
+    this.recipeNameEmitter.emit(newRecipeName);
+  }
 }
