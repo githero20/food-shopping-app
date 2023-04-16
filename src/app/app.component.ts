@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'food-shopping-app';
+  loadedFeature = 'recipe';
+
+  // receives the event (as a string) from onNavigate and updates the loadedFeature with it
+  onNavigate(feature: string) {
+    this.loadedFeature = feature;
+  }
 }
