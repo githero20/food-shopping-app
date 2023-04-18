@@ -14,8 +14,8 @@ export class RecipeListComponent {
       'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'
     ),
     new Recipe(
-      'A Test Recipe 2',
-      'This is simply a test',
+      'Second Test Recipe',
+      'This is the second test recipe',
       'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'
     ),
   ];

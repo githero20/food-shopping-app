@@ -3,6 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      <!-- using this to mock navigation, i.e. we show different components depending on the feature selected -->
       <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
       <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
       <!-- <app-header></app-header>

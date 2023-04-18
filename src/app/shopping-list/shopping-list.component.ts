@@ -11,4 +11,9 @@ export class ShoppingListComponent {
     new Ingredient('Tomato', 1),
     new Ingredient('Pepper', 3),
   ];
+
+  // will receive an ingredient event from the emitter
+  onIngredientAdded(ingredient: Ingredient) {
+    ingredient.name !== '' && this.ingredients.push(ingredient);
+  }
 }
