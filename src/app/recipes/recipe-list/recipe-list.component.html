@@ -9,7 +9,7 @@
     <app-recipe-item
       *ngFor="let recipeEl of recipes"
       [recipeElement]="recipeEl"
-      (recipeSelected)="OnRecipeSelected(recipeEl)"
+      (recipeSelected)="onRecipeSelected(recipeEl)"
     ></app-recipe-item>
     <!-- 
       onClick of that recipeSelected event emitter, we're
