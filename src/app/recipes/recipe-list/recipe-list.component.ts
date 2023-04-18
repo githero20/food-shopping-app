@@ -21,10 +21,11 @@ export class RecipeListComponent {
   ];
 
   // recipeName: string = 'dummy';
-  @Output() recipeNameEmitter = new EventEmitter<string>();
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
   // also outputs what it receives
 
-  onAcceptRecipeName(newRecipeName: string) {
-    this.recipeNameEmitter.emit(newRecipeName);
+  // emit the recipe received
+  onRecipeSelected(recipe: Recipe) {
+    this.recipeWasSelected.emit(recipe);
   }
 }

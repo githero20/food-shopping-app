@@ -1,10 +1,21 @@
 <div class="row">
   <div class="col-md-5">
     <app-recipe-list
-      (recipeNameEmitter)="onSaveRecipeName($event)"
+      (recipeWasSelected)="finalRecipe = $event"
     ></app-recipe-list>
+    <!-- could have also put it into a method like below -->
+    <!-- <app-recipe-list
+      (recipeWasSelected)="onSaveRecipeName($event)"
+    ></app-recipe-list> -->
+    <!-- once the recipeWasSelected event is emitted, we define the selected recipe -->
   </div>
   <div class="col-md-7">
-    <app-recipe-detail [recipeDetailName]="finalRecipeName"></app-recipe-detail>
+    <app-recipe-detail
+      *ngIf="finalRecipe; else infoText"
+      [recipeDetail]="finalRecipe"
+    ></app-recipe-detail>
+    <ng-template #infoText>
+      <p>Please select a Recipe!</p>
+    </ng-template>
   </div>
 </div>

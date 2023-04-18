@@ -9,7 +9,10 @@
     <app-recipe-item
       *ngFor="let recipeEl of recipes"
       [recipeElement]="recipeEl"
-      (recipeSelected)="onAcceptRecipeName($event)"
+      (recipeSelected)="OnRecipeSelected(recipeEl)"
     ></app-recipe-item>
+    <!-- 
+      onClick of that recipeSelected event emitter, we're
+      passing the selected recipe into the omRecipeSelected function -->
   </div>
 </div>
